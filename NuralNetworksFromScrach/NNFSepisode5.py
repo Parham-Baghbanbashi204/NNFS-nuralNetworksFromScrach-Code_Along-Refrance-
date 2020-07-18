@@ -25,6 +25,12 @@ class ActivationReLU:
     def forward(self, inputs):
         self.output = np.maximum(0, inputs)
 
+class ActivationSignoid:
+    def forward(self, inputs):
+        self.output = 1 / (1 + np.exp(-inputs))
+
+
+
 
 layer1 = LayerDense(2, 5)
 activation1 = ActivationReLU()
